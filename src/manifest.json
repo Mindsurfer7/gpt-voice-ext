@@ -1,0 +1,24 @@
+{
+  "name": "VoiceExtGPT",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "permissions": ["tabs", "storage", "downloads", "activeTab", "scripting"],
+  "description": "Web extention to use Whisper AI api on chat gpt website to translate your voice",
+
+  "host_permissions": ["https://chat.openai.com/c/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://chat.openai.com/c/*"],
+      "run_at": "document_idle",
+      "all_frames": false,
+      "js": ["voiceIntergrator.js"],
+      "css": ["microphone.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["microphone.css", "icons/mic.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
