@@ -4,7 +4,11 @@
   "manifest_version": 3,
   "permissions": ["tabs", "storage", "downloads", "activeTab", "scripting"],
   "description": "Web extention to use Whisper AI api on chat gpt website to translate your voice",
-
+  "icons": {
+    "128": "/icons/icon128.png",
+    "48": "/icons/icon48.png",
+    "16": "/icons/icon16.png"
+  },
   "host_permissions": ["https://chat.openai.com/c/*"],
   "content_scripts": [
     {
