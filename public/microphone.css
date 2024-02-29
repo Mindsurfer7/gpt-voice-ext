@@ -14,6 +14,69 @@
   cursor: pointer;
 }
 
+.modal {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+  gap: 20px;
+  width: 300px;
+  color: rgb(16, 238, 208);
+  height: 500px;
+  font-size: 24px;
+  background-color: rgb(8, 0, 15);
+  border-radius: 7px;
+}
+
+.descr {
+  color: rgb(16, 238, 208);
+  font-size: 16px;
+}
+
+.connect {
+  padding: 6px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  background-color: rgb(25, 230, 212);
+  color: white;
+  transition: background-color 0.2s ease;
+}
+.connect:hover {
+  background-color: rgb(20, 231, 125);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.resetBtn {
+  margin-top: 20px;
+  padding: 6px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  background-color: rgb(252, 5, 5);
+  color: rgb(0, 0, 0);
+  transition: background-color 0.2s ease;
+}
+
+.resetBtn:hover {
+  background-color: rgb(245, 9, 9);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.link {
+  color: rgb(16, 238, 208);
+}
+
+.inputKey {
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 4px;
+  background-color: rgb(16, 236, 207);
+}
+.title {
+  font-size: 24px;
+}
+
 .player {
   height: 20px;
   width: 100px;

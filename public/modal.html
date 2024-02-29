@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./microphone.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPT Voice Extention</title>
+  </head>
+  <body>
+    <div class="modal">
+      <h1 class="title">GPT Voice Extention</h1>
+      <div class="descr">
+        To use a transcription feature of Whisper AI model you have to set your
+        OpenAI API key. You can get it at:
+        <a class="link" href="https://platform.openai.com/api-keys">
+          official website
+        </a>
+      </div>
+      <span class="title">Enter Your API Key here:</span>
+      <input
+        id="inputKey"
+        type="text"
+        class="inputKey"
+        placeholder="OpenAI Key"
+      />
+      <button id="connect" class="connect">Connect</button>
+      <span id="msg"> </span>
+
+      <div id="current" class="current">Current key:</div>
+      <button id="reset" class="resetBtn">reset key</button>
+    </div>
+
+    <script defer src="modal.js"></script>
+  </body>
+</html>

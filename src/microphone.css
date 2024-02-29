@@ -31,17 +31,4 @@
   animation-duration: 1s; /* Длительность анимации */
   animation-iteration-count: infinite; /* Бесконечное повторение */
   animation-direction: alternate;
-  /* border: 2px solid rgb(224, 204, 17); */
-}
-
-@keyframes moveLeftRight {
-  0% {
-    transform: translateX(0); /* Начальное положение - без смещения */
-  }
-  50% {
-    transform: translateX(-10px); /* Смещение влево */
-  }
-  100% {
-    transform: translateX(10px); /* Смещение вправо */
-  }
 }

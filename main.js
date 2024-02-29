@@ -1,4 +1,5 @@
 import { onRecClick, setupMediaRecord } from "./src/recorder";
+console.log("init");
 
 //import the css
 const cssLink = document.createElement("link");

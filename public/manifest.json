@@ -8,7 +8,7 @@
   "host_permissions": ["https://chat.openai.com/c/*"],
   "content_scripts": [
     {
-      "matches": ["https://chat.openai.com/c/*"],
+      "matches": ["https://chat.openai.com/c/*", "https://chat.openai.com/*"],
       "run_at": "document_idle",
       "all_frames": false,
       "js": ["bundle.js"],
@@ -20,5 +20,11 @@
       "resources": ["microphone.css", "icons/mic.png"],
       "matches": ["<all_urls>"]
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "modal.html"
+  }
 }
