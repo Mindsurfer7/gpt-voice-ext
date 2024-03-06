@@ -135,3 +135,24 @@
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   }
 }
+
+.loader {
+  border: 6px solid #007bff; /* Цвет кружка */
+  border-top: 6px solid transparent; /* Прозрачный верхний кусок, чтобы создать эффект кручения */
+  border-radius: 50%; /* Делает круглый элемент */
+  width: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  animation: spin 2s linear infinite; /* Используется анимация spin, продолжительность 2 секунды, линейное вращение бесконечно */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  } /* Начальное состояние: угол 0 градусов */
+  100% {
+    transform: rotate(360deg);
+  } /* Конечное состояние: угол 360 градусов (полный оборот) */
+}

@@ -23,6 +23,7 @@ function checkForTextarea() {
     //creating button
     microBtn.innerHTML = "voice";
     microBtn.id = "rec";
+    microBtn.type = "button";
     microBtn.classList.add("microphone");
 
     flex.appendChild(microBtn);

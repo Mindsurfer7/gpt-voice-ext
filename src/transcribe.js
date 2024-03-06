@@ -1,12 +1,10 @@
 import axios from "axios";
-// import { player } from "../main";
 
 export const setupHeaders = async () => {
   const { apiKey } = await new Promise((resolve) => {
     chrome.storage.local.get("apiKey", (data) => resolve(data));
   });
 
-  console.log("MY KEY", apiKey);
   const config = {
     headers: {
       "Content-Type": "audio/mpeg",
@@ -28,19 +26,29 @@ export const transcribeVoice = async (blob) => {
   payload.append("file", blob);
 
   const config = await setupHeaders();
-  textarea.classList.add("loading");
-  textarea.value = "Loading...";
+
+  const loader = document.createElement("div");
+  loader.classList.add("loader");
+  textarea.parentNode.appendChild(loader);
+
+  if (textarea.value.trim() !== "") {
+    textarea.value += " ";
+  }
+
   const transcription = await axios
     .post("https://api.openai.com/v1/audio/transcriptions", payload, config)
     .then((data) => data)
     .catch((e) => {
       alert(`Without api key you can not use the extention: ${e.message} `);
     });
-
+  textarea.parentNode.removeChild(loader);
   console.log(transcription);
 
-  textarea.classList.remove("loading");
-  textarea.value = transcription.data.text;
+  if (textarea.value.trim() !== "") {
+    textarea.value += transcription.data.text;
+  } else {
+    textarea.value = transcription.data.text;
+  }
 
   textarea.focus();
   const inputEvent = new Event("input", {

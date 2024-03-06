@@ -30,7 +30,6 @@ const record = (stream) => {
 
 export const onRecClick = () => {
   console.log("record");
-
   if (!canRecord) {
     return;
   }
