@@ -18,12 +18,17 @@ export const setupHeaders = async () => {
 };
 
 export const transcribeVoice = async (blob) => {
-  const textarea = document.getElementById("prompt-textarea");
+  const textarea =
+    document.getElementById("prompt-textarea") ||
+    document.querySelector("textarea");
+  console.log(textarea);
+
   const payload = new FormData();
   payload.append("model", "whisper-1");
   payload.append("file", blob);
 
   const config = await setupHeaders();
+  textarea.classList.add("loading");
   textarea.value = "Loading...";
   const transcription = await axios
     .post("https://api.openai.com/v1/audio/transcriptions", payload, config)
@@ -34,6 +39,7 @@ export const transcribeVoice = async (blob) => {
 
   console.log(transcription);
 
+  textarea.classList.remove("loading");
   textarea.value = transcription.data.text;
 
   textarea.focus();

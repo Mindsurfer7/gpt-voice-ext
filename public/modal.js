@@ -37,3 +37,15 @@ connectBtn.addEventListener("click", () => {
     }
   });
 });
+
+//creating player
+// const playerWrapper = document.createElement("div");
+// playerWrapper.classList.add("player");
+// playerWrapper.innerHTML = '<audio id="sound" controls class="player"></audio>';
+
+// export const player = document.createElement("AUDIO");
+// player.id = "sound";
+// player.controls = true;
+// flex.appendChild(player);
+
+////////////////////////////////////////////////////////
