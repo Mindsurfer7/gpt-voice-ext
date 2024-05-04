@@ -9,10 +9,18 @@
     "48": "/icons/icon48.png",
     "16": "/icons/icon16.png"
   },
-  "host_permissions": ["https://chat.openai.com/c/*"],
+  "host_permissions": [
+    "https://chat.openai.com/c/*",
+    "https://chatgpt.com/c/*, https://chatgpt.com/"
+  ],
   "content_scripts": [
     {
-      "matches": ["https://chat.openai.com/c/*", "https://chat.openai.com/*"],
+      "matches": [
+        "https://chat.openai.com/c/*",
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/",
+        "https://chatgpt.com/c/*"
+      ],
       "run_at": "document_idle",
       "all_frames": false,
       "js": ["bundle.js"],
